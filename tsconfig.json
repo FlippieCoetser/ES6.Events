@@ -9,5 +9,10 @@
         "rootDir": "./src",
         "sourceMap": false,
         "noResolve": true
-    }
+    },
+    "exclude": [
+        "test/EventsTest.ts",
+        "node_modules"
+    ]
+    
 }

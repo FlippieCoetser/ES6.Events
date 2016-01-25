@@ -1,6 +1,6 @@
 {
   "name": "typescript.events",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "TypeScript Event Management Library",
   "main": "lib/Events.js",
   "typings": "lib/Events.d.ts",

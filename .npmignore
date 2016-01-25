@@ -2,3 +2,4 @@
 tsconfig.json
 tsd.json
 typings/*
+test/

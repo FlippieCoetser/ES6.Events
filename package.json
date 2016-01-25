@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/FlippieCoetser/Event/issues"
   },
-  "homepage": "https://github.com/FlippieCoetser/Event#readme"
+  "homepage": "https://github.com/FlippieCoetser/Event#readme",
+  "devDependencies": {
+    "mocha": "^2.3.4"
+  }
 }

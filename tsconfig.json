@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es5",
+        "declaration": true,
+        "noImplicitAny": false,
+        "outDir": "lib",
+        "rootDir": "./src",
+        "sourceMap": false,
+        "noResolve": true
+    },
+    "files": [
+        "src/Events.ts"
+    ]
+}

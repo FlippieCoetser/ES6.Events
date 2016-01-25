@@ -1,8 +1,9 @@
 {
-  "name": "typescript.event",
+  "name": "typescript.events",
   "version": "1.0.0",
   "description": "TypeScript Event Management Library",
-  "main": "/lib/Event.js",
+  "main": "lib/Events.js",
+  "typings": "lib/Events.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,8 +12,8 @@
     "url": "git+https://github.com/FlippieCoetser/Event.git"
   },
   "keywords": [
-    "Event",
-    "Management"
+    "Event Management",
+    "TypeScript"
   ],
   "author": "Flippie Coetser",
   "license": "MIT",

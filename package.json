@@ -5,7 +5,7 @@
   "main": "lib/Events.js",
   "typings": "lib/Events.d.ts",
   "scripts": {
-    "pretest": "tsc --module commonjs test/EventsTest.ts",
+    "pretest": "tsc && tsc --module commonjs test/EventsTest.ts",
     "test": "mocha"
   },
   "repository": {

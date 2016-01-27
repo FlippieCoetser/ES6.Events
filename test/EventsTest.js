@@ -1,5 +1,5 @@
 /// <reference path="../typings/mocha/mocha.d.ts" />
-var Events = require('../src/Events');
+var Events = require('../lib/Events');
 describe('Events', function () {
     var subject;
     beforeEach(function () {

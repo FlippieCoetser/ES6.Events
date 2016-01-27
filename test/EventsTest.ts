@@ -1,5 +1,5 @@
 /// <reference path="../typings/mocha/mocha.d.ts" />
-import * as Events from '../src/Events';
+import * as Events from '../lib/Events';
 
 describe('Events', () => {
     var subject: Events.IMessageEvent

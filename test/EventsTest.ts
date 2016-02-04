@@ -2,7 +2,7 @@
 import * as Events from '../lib/Events';
 
 describe('Events', () => {
-    var subject: Events.IMessageEvent
+    var subject: Events.IMessageEvent;
     
     beforeEach(function(){
         subject = new Events.Event();

@@ -9,7 +9,7 @@ export interface IEvent {
 export class Event implements IEvent {
     // Private member vars
 	private _listeners: any[] = [];
-
+    
 	public add (listener: () => void): void {
 		/// <summary>Registers a new listener for the event.</summary>
 		/// <param name="listener">The callback function to register.</param>

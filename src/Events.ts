@@ -13,7 +13,7 @@ export class Event implements IEvent {
 	public add (listener: () => void): void {
 		/// <summary>Registers a new listener for the event.</summary>
 		/// <param name="listener">The callback function to register.</param>
-		this._listeners.push(listener);
+		this._listeners.unshift(listener);
 	}
 	public remove (listener?: () => void): void {
 		/// <summary>Unregisters a listener from the event.</summary>

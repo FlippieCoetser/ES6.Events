@@ -3,14 +3,15 @@ import * as Events from '../lib/Events';
 
 describe('Events', () => {
     var subject: Events.IMessageEvent;
+    var callback: (message:string) => void;
     
     beforeEach(function(){
-        subject = new Events.Event();
+        callback= (message) => {console.log(message)};
+        subject = new Events.MessageEvent(callback);
     });
     
     describe('Event', () => {
         it('should invoke function added to subject when triggered', () => {
-            subject.add((message) => {console.log(message)});
             subject.trigger('trigger');
         })
     });

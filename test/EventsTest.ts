@@ -2,7 +2,7 @@
 import * as Events from '../lib/Events';
 
 describe('Events', () => {
-    var subject: Events.IMessageEvent;
+    var subject: Events.messageEvent;
     var callback: (message:string) => void;
     
     beforeEach(function(){

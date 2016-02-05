@@ -1,12 +1,12 @@
 // Base IEvent interface and implementation
 
-export interface IEvent {
+export interface event {
     add(listener: () => void): void;
     remove(listener: () => void ): void;
     trigger(...a:any[]): void;
 }
 
-export class Event implements IEvent {
+export class Event implements event {
     // Private member vars
 	protected _listeners: any[] = [];
    
@@ -42,7 +42,7 @@ export class Event implements IEvent {
 	}
 }
 
-export class MessageEvent extends Event implements IMessageEvent {
+export class MessageEvent extends Event implements messageEvent {
         constructor(listener?: (message) => void){
             super();
             if(listener){
@@ -58,7 +58,7 @@ export class MessageEvent extends Event implements IMessageEvent {
     } 
 	
 // Exposing events
-export interface IMessageEvent extends IEvent {
+export interface messageEvent extends event {
     add(listener: (message: string) => void): void;
     remove(listener: (message: string) => void ): void;
     trigger(message: string): void;

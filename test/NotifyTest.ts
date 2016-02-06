@@ -11,8 +11,8 @@ describe('Notify', () => {
     });
     
     describe('Notification', () => {
-        it('Invoke function past into constructor or Notify', () => {
-            subject.trigger('trigger');
+        it('Invoke function past into constructor of Notify', () => {
+            subject.trigger('Notifaction Executed');
         })
     });
 })

@@ -1,17 +1,17 @@
 /// <reference path="../typings/mocha/mocha.d.ts" />
-import * as Notify from '../lib/Notivy';
+import * as Notify from '../lib/Notify';
 
 describe('Notify', () => {
-    var subject: Nofity.messageNotification;
+    var subject: Notify.messageNotification;
     var callback: (message:string) => void;
     
     beforeEach(function(){
         callback= (message) => {console.log(message)};
-        subject = new Notify.MessageEvent(callback);
+        subject = new Notify.MessageNotification(callback);
     });
     
     describe('Notification', () => {
-        it('should invoke function added to subject when triggered', () => {
+        it('Invoke function past into constructor or Notify', () => {
             subject.trigger('trigger');
         })
     });

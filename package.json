@@ -2,15 +2,15 @@
   "name": "typescript.events",
   "version": "2.0.3",
   "description": "TypeScript Event Management Library",
-  "main": "lib/Events.js",
-  "typings": "lib/Events.d.ts",
+  "main": "lib/Notify.js",
+  "typings": "lib/Notify.d.ts",
   "scripts": {
     "pretest": "tsc && tsc --module commonjs test/EventsTest.ts",
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FlippieCoetser/Event.git"
+    "url": "git+https://github.com/FlippieCoetser/Notify.git"
   },
   "keywords": [
     "Event Management"
@@ -18,9 +18,9 @@
   "author": "Flippie Coetser",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FlippieCoetser/Event/issues"
+    "url": "https://github.com/FlippieCoetser/Notify/issues"
   },
-  "homepage": "https://github.com/FlippieCoetser/Event#readme",
+  "homepage": "https://github.com/FlippieCoetser/Notify#readme",
   "devDependencies": {
     "mocha": "^2.3.4"
   }

@@ -1,12 +1,12 @@
 // Base IEvent interface and implementation
 
-export interface notify {
+export interface notification {
     add(listener: () => void): void;
     remove(listener: () => void ): void;
     trigger(...a:any[]): void;
 }
 
-export class Notify implements notify {
+export class Notification implements notification {
     // Private member vars
 	protected _listeners: any[] = [];
    
@@ -42,7 +42,7 @@ export class Notify implements notify {
 	}
 }
 
-export class MessageNotification extends Notify implements messageNotification {
+export class MessageNotification extends Notification implements messageNotification {
         constructor(listener?: (message) => void){
             super();
             if(listener){
@@ -58,7 +58,7 @@ export class MessageNotification extends Notify implements messageNotification {
     } 
 	
 // Exposing Notify
-export interface messageNotification extends notify {
+export interface messageNotification extends notification {
     add(listener: (message: string) => void): void;
     remove(listener: (message: string) => void ): void;
     trigger(message: string): void;

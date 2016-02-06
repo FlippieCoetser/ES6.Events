@@ -1,9 +1,12 @@
 {
   "name": "typescript.notify",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "TypeScript Event Management",
   "main": "lib/Notify.js",
   "typings": "lib/Notify.d.ts",
+  "typescript": {
+    "definitions": "lib/Notify.d.ts"  
+  },
   "scripts": {
     "pretest": "tsc && tsc --module commonjs test/NotifyTest.ts",
     "test": "mocha"
@@ -14,6 +17,11 @@
   },
   "keywords": [
     "Event Management"
+  ],
+  "files":[
+    "lib/Notify.js",
+    "lib/Notify.d.ts",
+    "src/Notify.ts"  
   ],
   "author": "Flippie Coetser",
   "license": "MIT",

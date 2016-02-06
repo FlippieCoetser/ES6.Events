@@ -8,8 +8,8 @@ describe('Notify', function () {
         subject = new Notify.MessageNotification(callback);
     });
     describe('Notification', function () {
-        it('should invoke function added to subject when triggered', function () {
-            subject.trigger('trigger');
+        it('Invoke function past into constructor of Notify', function () {
+            subject.trigger('Notifaction Executed');
         });
     });
 });

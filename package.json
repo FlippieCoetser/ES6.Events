@@ -1,11 +1,11 @@
 {
-  "name": "typescript.events",
+  "name": "typescript.notify",
   "version": "2.0.3",
-  "description": "TypeScript Event Management Library",
+  "description": "TypeScript Event Management",
   "main": "lib/Notify.js",
   "typings": "lib/Notify.d.ts",
   "scripts": {
-    "pretest": "tsc && tsc --module commonjs test/EventsTest.ts",
+    "pretest": "tsc && tsc --module commonjs test/NotifyTest.ts",
     "test": "mocha"
   },
   "repository": {

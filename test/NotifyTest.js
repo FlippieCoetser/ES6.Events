@@ -1,15 +1,9 @@
 /// <reference path="../typings/mocha/mocha.d.ts" />
 var Notify = require('../lib/Notify');
-describe('Notify', function () {
-    var subject;
-    var callback;
-    beforeEach(function () {
-        callback = function (message) { console.log(message); };
-        subject = new Notify.MessageNotification(callback);
-    });
-    describe('Notification', function () {
-        it('Invoke function past into constructor of Notify', function () {
-            subject.trigger('Notifaction Executed');
-        });
+describe('Notification', function () {
+    var callback = function (message) { console.log(message); };
+    var subject = new Notify.MessageNotification(callback);
+    it('Should Invoke function past into constructor', function () {
+        subject.trigger('');
     });
 });

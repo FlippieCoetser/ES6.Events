@@ -1,8 +1,8 @@
 // Base IEvent interface and implementation
 
 export interface notification {
-    add(listener: () => void): void;
-    remove(listener: () => void ): void;
+    bind(listener: () => void): void;
+    unbind(listener: () => void ): void;
     trigger(...a:any[]): void;
 }
 
@@ -11,12 +11,12 @@ export class Notification implements notification {
 	protected _listeners: any[] = [];
    
  
-	public add (listener: () => void): void {
+	public bind (listener: () => void): void {
 		/// <summary>Registers a new listener for the event.</summary>
 		/// <param name="listener">The callback function to register.</param>
 		this._listeners.unshift(listener);
 	}
-	public remove (listener?: () => void): void {
+	public unbind (listener?: () => void): void {
 		/// <summary>Unregisters a listener from the event.</summary>
 		/// <param name="listener">The callback function that was registered. If missing then all listeners will be removed.</param>
         if (typeof listener === 'function') {
@@ -46,11 +46,11 @@ export class MessageNotification extends Notification implements messageNotifica
         constructor(listener?: (message) => void){
             super();
             if(listener){
-                this.add(listener);
+                this.bind(listener);
             }
         }
         
-        public add (listener: (message) => void): void {
+        public bind (listener: (message) => void): void {
 		/// <summary>Registers a new listener for the event.</summary>
 		/// <param name="listener">The callback function to register.</param>
 		this._listeners.unshift(listener);
@@ -59,7 +59,7 @@ export class MessageNotification extends Notification implements messageNotifica
 	
 // Exposing Notify
 export interface messageNotification extends notification {
-    add(listener: (message: string) => void): void;
-    remove(listener: (message: string) => void ): void;
+    bind(listener: (message: string) => void): void;
+    unbind(listener: (message: string) => void ): void;
     trigger(message: string): void;
 }

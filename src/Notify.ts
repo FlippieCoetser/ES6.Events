@@ -1,8 +1,12 @@
 // Base IEvent interface and implementation
 
+export interface callback {
+    (parameter?: string):void;
+}
+
 export interface notification {
-    bind(listener: () => void): void;
-    unbind(listener: () => void ): void;
+    bind(listener: callback): void;
+    unbind(listener: callback): void;
     trigger(...a:any[]): void;
 }
 
@@ -11,12 +15,12 @@ export class Notification implements notification {
 	protected _listeners: any[] = [];
    
  
-	public bind (listener: () => void): void {
+	public bind (listener: callback): void {
 		/// <summary>Registers a new listener for the event.</summary>
 		/// <param name="listener">The callback function to register.</param>
 		this._listeners.unshift(listener);
 	}
-	public unbind (listener?: () => void): void {
+	public unbind (listener?: callback): void {
 		/// <summary>Unregisters a listener from the event.</summary>
 		/// <param name="listener">The callback function that was registered. If missing then all listeners will be removed.</param>
         if (typeof listener === 'function') {
@@ -42,24 +46,4 @@ export class Notification implements notification {
 	}
 }
 
-export class MessageNotification extends Notification implements messageNotification {
-        constructor(listener?: (message) => void){
-            super();
-            if(listener){
-                this.bind(listener);
-            }
-        }
-        
-        public bind (listener: (message) => void): void {
-		/// <summary>Registers a new listener for the event.</summary>
-		/// <param name="listener">The callback function to register.</param>
-		this._listeners.unshift(listener);
-	}
-    } 
 	
-// Exposing Notify
-export interface messageNotification extends notification {
-    bind(listener: (message: string) => void): void;
-    unbind(listener: (message: string) => void ): void;
-    trigger(message: string): void;
-}

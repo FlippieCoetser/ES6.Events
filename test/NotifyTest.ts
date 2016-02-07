@@ -2,10 +2,29 @@
 import * as Notify from '../lib/Notify';
 
 describe('Notification', () => {
-    var callback: (message:string) => void = (message) => {console.log(message)};
-    var subject: Notify.messageNotification = new Notify.MessageNotification(callback);
-        
-    it('Should Invoke function past into constructor', () => {
-        subject.trigger('');
+    var Output: Notify.notification = new Notify.Notification();
+    var Callback: Notify.callback;
+
+            
+    it('Should Invoke Callback when Triggered', (done) => {
+        Callback = (Message) => {
+            if(!Message){
+                console.log('Callback Triggered')
+                done();
+            }
+        }
+        Output.bind(Callback);
+        Output.trigger();
     });
+    
+    it('Should Invole Callback with Message', (done) => {
+       Callback = (Message) => {
+            if(Message){
+                console.log('Callback Triggered + Paremter: ' + Message);
+                done();
+            }
+        }
+       Output.bind(Callback);
+       Output.trigger('Message'); 
+    })
 })

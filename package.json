@@ -1,6 +1,6 @@
 {
   "name": "typescript.notify",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "TypeScript Event Management",
   "main": "lib/Notify.js",
   "typings": "lib/Notify.d.ts",

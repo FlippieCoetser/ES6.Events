@@ -9,7 +9,8 @@
   },
   "scripts": {
     "pretest": "tsc && tsc --module commonjs test/NotifyTest.ts",
-    "test": "mocha"
+    "test": "mocha",
+    "install": "tsd install"
   },
   "repository": {
     "type": "git",
@@ -33,7 +34,7 @@
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
     "gulp-mocha": "^2.2.0",
-    "gulp-typescript": "^2.10.0",
+    "gulp-typescript": "*",
     "mocha": "^2.3.4"
   }
 }

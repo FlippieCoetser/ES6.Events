@@ -10,7 +10,7 @@
   "scripts": {
     "pretest": "tsc && tsc --module commonjs test/NotifyTest.ts",
     "test": "mocha",
-    "install": "tsd install"
+    "install": "tsd install && tsc"
   },
   "repository": {
     "type": "git",

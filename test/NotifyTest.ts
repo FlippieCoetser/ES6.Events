@@ -8,10 +8,10 @@ import sinonChai = require('sinon-chai');
 let should = chai.should();
 chai.use(sinonChai);
 
-import * as Notify from '../lib/Notify';
+import * as Notify from "../lib/Notify";
 
 describe('Notification', () => {
-    var Output: Notify.notification = new Notify.Notification();
+    let Output: Notify.notification = new Notify.Notification();
              
     it('Should Invoke Callback when .emit', () => {       
         var callback = sinon.spy();

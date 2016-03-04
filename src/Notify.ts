@@ -1,5 +1,3 @@
-// Base IEvent interface and implementation
-
 export interface callback {
     (parameter?: string):void;
 }
@@ -47,5 +45,3 @@ export class Notification implements notification {
 		}
 	}
 }
-
-	

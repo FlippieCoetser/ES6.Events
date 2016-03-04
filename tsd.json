@@ -13,6 +13,15 @@
     },
     "chai/chai.d.ts": {
       "commit": "9f0f926a12026287b5a4a229e5672c01e7549313"
+    },
+    "node/node.d.ts": {
+      "commit": "9f0f926a12026287b5a4a229e5672c01e7549313"
+    },
+    "sinon-chai/sinon-chai.d.ts": {
+      "commit": "9f0f926a12026287b5a4a229e5672c01e7549313"
+    },
+    "sinon/sinon.d.ts": {
+      "commit": "9f0f926a12026287b5a4a229e5672c01e7549313"
     }
   }
 }

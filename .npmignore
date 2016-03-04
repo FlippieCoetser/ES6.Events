@@ -1,5 +1,4 @@
 .vscode/*
-tsconfig.json
-tsd.json
 typings/*
 test/
+node_modules/

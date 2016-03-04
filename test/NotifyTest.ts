@@ -1,4 +1,7 @@
 /// <reference path="../typings/mocha/mocha.d.ts" />
+import chai = require('chai');
+let should = chai.should();
+
 import * as Notify from '../lib/Notify';
 
 describe('Notification', () => {

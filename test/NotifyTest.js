@@ -1,4 +1,6 @@
 /// <reference path="../typings/mocha/mocha.d.ts" />
+var chai = require('chai');
+var should = chai.should();
 var Notify = require('../lib/Notify');
 describe('Notification', function () {
     var Output = new Notify.Notification();

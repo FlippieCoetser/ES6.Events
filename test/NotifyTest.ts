@@ -1,6 +1,5 @@
 /// <reference path="../typings/mocha/mocha.d.ts" />
 /// <reference path="../typings/chai/chai.d.ts" />
-/// <reference path="../typings/node/node.d.ts" />
 /// <reference path="../typings/sinon-chai/sinon-chai.d.ts" />
 
 import chai = require('chai');

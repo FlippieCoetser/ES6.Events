@@ -5,6 +5,7 @@
         "target": "es5",
         "declaration": true,
         "noImplicitAny": false,
+<<<<<<< HEAD
         "outDir": "lib",
         "rootDir": "./src",
         "sourceMap": true,
@@ -13,6 +14,16 @@
     "exclude": [
         "test",
         "node_modules"
+=======
+        "outDir": "dist",
+        "rootDir": "./src",
+        "sourceMap": true,
+        "noResolve": true,
+        "noLib": true
+    },
+    "files": [
+        "./src/Node.ts"
+>>>>>>> 156f9b2147b60d2c595e4ea484c157b0119fa771
     ]
     
 }

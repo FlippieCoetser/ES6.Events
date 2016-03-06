@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "typescript.notify",
   "version": "2.0.10",
   "description": "TypeScript Event Management",
@@ -41,45 +40,5 @@
     "mocha": "^2.3.4",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0"
-=======
-  "name": "typescript.events",
-  "version": "1.0.0",
-  "description": "Implementation of Node.Events in TypeScript for client and server",
-  "main": "dist/node.js",
-  "typings": "dist/node.d.ts",
-  "scripts": {
-    "setup": "sh -c './node_modules/.bin/typings install' && sh -c './node_modules/.bin/gulp build'",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FlippieCoetser/Events.git"
-  },
-  "keywords": [
-    "TypeScript",
-    "Events",
-    "Node"
-  ],
-  "files": [
-    "dist",
-    "src"
-  ],
-  "author": "PJ Coetser",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/FlippieCoetser/Events/issues"
-  },
-  "homepage": "https://github.com/FlippieCoetser/Events#readme",
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.3.2",
-    "gulp-mocha": "^2.2.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-typescript": "^2.12.1",
-    "merge2": "^1.0.1",
-    "mocha": "^2.4.5",
-    "typings": "^0.6.10"
->>>>>>> 156f9b2147b60d2c595e4ea484c157b0119fa771
   }
 }

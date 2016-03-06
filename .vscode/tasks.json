@@ -4,7 +4,6 @@
     "isShellCommand": true,
     "tasks": [
         {
-<<<<<<< HEAD
             "taskName": "Build",
             "isBuildCommand": true,
             "showOutput": "silent",
@@ -15,12 +14,6 @@
             "isBuildCommand": false,
             "isTestCommand": true,
             "showOutput": "always"
-=======
-            "taskName": "build",
-            "isBuildCommand": true,
-            "showOutput": "silent",
-            "problemMatcher": "$tsc"
->>>>>>> 156f9b2147b60d2c595e4ea484c157b0119fa771
         }
     ]
 }

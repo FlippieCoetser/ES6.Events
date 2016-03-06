@@ -1,0 +1,24 @@
+{
+  "name": "typescript.events",
+  "version": "1.0.0",
+  "description": "Implementation of Node.Events in TypeScript for client and server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlippieCoetser/Events.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "Events",
+    "Node"
+  ],
+  "author": "PJ Coetser",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FlippieCoetser/Events/issues"
+  },
+  "homepage": "https://github.com/FlippieCoetser/Events#readme"
+}

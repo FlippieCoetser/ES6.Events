@@ -11,7 +11,7 @@
         "noResolve": true
     },
     "exclude": [
-        "test/NotifyTest.ts",
+        "test",
         "node_modules"
     ]
     

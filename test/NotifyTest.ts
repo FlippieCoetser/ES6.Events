@@ -1,14 +1,13 @@
 /// <reference path="../typings/mocha/mocha.d.ts" />
 /// <reference path="../typings/chai/chai.d.ts" />
 /// <reference path="../typings/sinon-chai/sinon-chai.d.ts" />
+import * as Notify from "../lib/Notify";
 
 import chai = require('chai');
 import sinon = require('sinon');
 import sinonChai = require('sinon-chai');
 let should = chai.should();
 chai.use(sinonChai);
-
-import * as Notify from "../lib/Notify";
 
 describe('Notification', () => {
     let Output: Notify.notification = new Notify.Notification();

@@ -5,7 +5,8 @@
   "main": "lib/node.js",
   "typings": "lib/node.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "install": "typings install && gulp build",
+      "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,10 @@
     "Node"
   ],
   "files": [
-      "lib",
-      "src"
+      "src",
+      "typings.json",
+      "gulpfile.js",
+      "tsconfig.json"
   ],
   "author": "PJ Coetser",
   "license": "MIT",

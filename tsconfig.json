@@ -8,6 +8,12 @@
         "outDir": "lib",
         "rootDir": "./src",
         "sourceMap": true,
-        "noResolve": true
-    }
+        "noResolve": true,
+        "noLib": true
+    },
+    "files": [
+        "src",
+        "typings"
+    ]
+    
 }

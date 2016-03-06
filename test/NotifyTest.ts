@@ -1,7 +1,5 @@
-/// <reference path="../typings/mocha/mocha.d.ts" />
-/// <reference path="../typings/chai/chai.d.ts" />
-/// <reference path="../typings/sinon-chai/sinon-chai.d.ts" />
-import * as Notify from "../lib/Notify";
+/// <reference path="../typings/tsd.d.ts" />
+import {Notification, notification} from "../lib/Notify";
 
 import chai = require('chai');
 import sinon = require('sinon');
@@ -10,7 +8,7 @@ let should = chai.should();
 chai.use(sinonChai);
 
 describe('Notification', () => {
-    let Output: Notify.notification = new Notify.Notification();
+    let Output: notification = new Notification();
              
     it('Should Invoke Callback when .emit', () => {       
         var callback = sinon.spy();

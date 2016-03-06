@@ -5,7 +5,7 @@
   "main": "dist/node.js",
   "typings": "dist/node.d.ts",
   "scripts": {
-    "build": "sh -c './node_modules/.bin/typings install' && sh -c './node_modules/.bin/gulp build'",
+    "setup": "sh -c './node_modules/.bin/typings install' && sh -c './node_modules/.bin/gulp build'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

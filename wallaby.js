@@ -6,16 +6,11 @@ module.exports = function (wallaby) {
     ],
 
     tests: [
-      'test/*NodeSpec.ts'
+      'test/*NodeTest.ts'
     ],
 
     env: {
       type: 'node'
-    },
-    
-    // you may remove the setting if you have a tsconfig.json file where the same is set
-    compilers: {
-      '**/*.ts': wallaby.compilers.typeScript({module: 'commonjs'})
     }
   };
 };

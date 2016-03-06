@@ -2,11 +2,11 @@
   "name": "typescript.events",
   "version": "1.0.0",
   "description": "Implementation of Node.Events in TypeScript for client and server",
-  "main": "lib/node.js",
-  "typings": "lib/node.d.ts",
+  "main": "dist/node.js",
+  "typings": "dist/node.d.ts",
   "scripts": {
-      "install": "typings install && gulp build",
-      "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "sh -c './node_modules/.bin/typings install' && sh -c './node_modules/.bin/gulp build'",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -18,10 +18,8 @@
     "Node"
   ],
   "files": [
-      "src",
-      "typings.json",
-      "gulpfile.js",
-      "tsconfig.json"
+    "dist",
+    "src"
   ],
   "author": "PJ Coetser",
   "license": "MIT",
@@ -32,10 +30,12 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
     "gulp-mocha": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.12.1",
     "merge2": "^1.0.1",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "typings": "^0.6.10"
   }
 }

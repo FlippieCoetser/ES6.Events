@@ -5,15 +5,14 @@
         "target": "es5",
         "declaration": true,
         "noImplicitAny": false,
-        "outDir": "lib",
+        "outDir": "dist",
         "rootDir": "./src",
         "sourceMap": true,
         "noResolve": true,
         "noLib": true
     },
     "files": [
-        "src",
-        "typings"
+        "./src/Node.ts"
     ]
     
 }

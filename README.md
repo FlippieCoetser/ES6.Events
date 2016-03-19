@@ -14,5 +14,8 @@ myEmitter.on('event', () => {
 
 myEmitter.emit('event');
 ```
+### IntelliSense Exeperience
+
+![Alt Text](https://github.com/FlippieCoetser/Events/intelliSense.gif)
 
 Refer to https://nodejs.org/api/events.html for additional information

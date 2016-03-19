@@ -14,8 +14,14 @@ myEmitter.on('event', () => {
 
 myEmitter.emit('event');
 ```
+Refer to https://nodejs.org/api/events.html for additional information
+
 ### IntelliSense Exeperience
 
 ![Alt Text](https://github.com/FlippieCoetser/Events/blob/master/intelliSense.gif)
 
-Refer to https://nodejs.org/api/events.html for additional information
+### Installation
+
+```
+npm install typescript.events
+```

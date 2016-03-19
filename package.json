@@ -1,44 +1,54 @@
 {
-  "name": "typescript.notify",
-  "version": "2.0.10",
+  "name": "typescript.events",
+  "version": "3.0.0",
   "description": "TypeScript Event Management",
-  "main": "lib/Notify.js",
-  "typings": "lib/Notify.d.ts",
+  "main": "lib/typescript.events.js",
+  "typings": "lib/typescript.events.d.ts",
   "typescript": {
-    "definitions": "lib/Notify.d.ts"
+    "definitions": "lib/typescript.events.d.ts"
   },
   "scripts": {
-    "pretest": "tsc && tsc --module commonjs test/NotifyTest.ts",
+    "pretest": "tsc && tsc --module commonjs test/typescript.events.test.ts",
     "test": "mocha",
-    "install": "tsd install && tsc"
+    "setup": "typings install"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FlippieCoetser/Notify.git"
+    "url": "git+https://github.com/FlippieCoetser/Events.git"
   },
   "keywords": [
     "Event Management"
   ],
   "files": [
-    "lib/Notify.js",
-    "lib/Notify.d.ts",
-    "src/Notify.ts"
+    "lib/typescript.events.js",
+    "lib/typescript.events.d.ts",
+    "lib/typescript.events.ts",
+    "lib/typescript.events.js.map"
   ],
   "author": "Flippie Coetser",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FlippieCoetser/Notify/issues"
+    "url": "https://github.com/FlippieCoetser/Events/issues"
   },
-  "homepage": "https://github.com/FlippieCoetser/Notify#readme",
+  "homepage": "https://github.com/FlippieCoetser/Events#readme",
   "devDependencies": {
     "chai": "^3.5.0",
+    "complexity-report": "^1.4.1",
+    "del": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-copy": "0.0.2",
+    "gulp-istanbul": "^0.10.3",
     "gulp-mocha": "^2.2.0",
+    "gulp-sequence": "^0.4.5",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-tslint": "^4.3.3",
     "gulp-typescript": "*",
+    "istanbul": "^0.4.2",
     "merge2": "^1.0.1",
     "mocha": "^2.3.4",
     "sinon": "^1.17.3",
-    "sinon-chai": "^2.8.0"
+    "sinon-chai": "^2.8.0",
+    "tslint": "^3.5.0",
+    "typings": "^0.7.7"
   }
 }

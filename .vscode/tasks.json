@@ -4,13 +4,13 @@
     "isShellCommand": true,
     "tasks": [
         {
-            "taskName": "Build",
+            "taskName": "build",
             "isBuildCommand": true,
             "showOutput": "silent",
             "problemMatcher": "$tsc"
         },
         {
-            "taskName": "Test",
+            "taskName": "test",
             "isBuildCommand": false,
             "isTestCommand": true,
             "showOutput": "always"

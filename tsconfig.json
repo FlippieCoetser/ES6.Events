@@ -5,14 +5,16 @@
         "target": "es5",
         "declaration": true,
         "noImplicitAny": false,
-        "outDir": "lib",
+        "outDir": "src",
         "rootDir": "./src",
         "sourceMap": true,
         "noResolve": true
     },
     "exclude": [
-        "test/NotifyTest.ts",
-        "node_modules"
+        "test/typescript.events.test.ts",
+        "lib",
+        "node_modules",
+        "typings"
     ]
     
 }

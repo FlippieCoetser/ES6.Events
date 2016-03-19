@@ -1,4 +1,9 @@
 node_modules/
 typings/
-lib/
 test/*.js
+src/*.js
+src/*.js.map
+src/*.d.ts
+complexity/
+coverage/
+lib/

@@ -1,0 +1,123 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec { raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'D:\\Projects\\Events',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\AEQ00241\AppData\Roaming\npm-cache\typescript.events\3.0.0\package.tgz not in flight; packing
+9 verbose tar pack [ 'C:\\Users\\AEQ00241\\AppData\\Roaming\\npm-cache\\typescript.events\\3.0.0\\package.tgz',
+9 verbose tar pack   'D:\\Projects\\Events' ]
+10 verbose tarball C:\Users\AEQ00241\AppData\Roaming\npm-cache\typescript.events\3.0.0\package.tgz
+11 verbose folder D:\Projects\Events
+12 info prepublish typescript.events@3.0.0
+13 verbose addLocalTarball adding from inside cache C:\Users\AEQ00241\AppData\Roaming\npm-cache\typescript.events\3.0.0\package.tgz
+14 silly cache afterAdd typescript.events@3.0.0
+15 verbose afterAdd C:\Users\AEQ00241\AppData\Roaming\npm-cache\typescript.events\3.0.0\package\package.json not in flight; writing
+16 verbose afterAdd C:\Users\AEQ00241\AppData\Roaming\npm-cache\typescript.events\3.0.0\package\package.json written
+17 silly publish { name: 'typescript.events',
+17 silly publish   version: '3.0.0',
+17 silly publish   description: 'TypeScript Event Management',
+17 silly publish   main: 'lib/typescript.events.js',
+17 silly publish   typings: 'lib/typescript.events.d.ts',
+17 silly publish   typescript: { definitions: 'lib/typescript.events.d.ts' },
+17 silly publish   scripts:
+17 silly publish    { pretest: 'tsc && tsc --module commonjs test/typescript.events.test.ts',
+17 silly publish      test: 'mocha',
+17 silly publish      setup: 'typings install' },
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'git+https://github.com/FlippieCoetser/Events.git' },
+17 silly publish   keywords: [ 'Event Management' ],
+17 silly publish   files:
+17 silly publish    [ 'lib/typescript.events.js',
+17 silly publish      'lib/typescript.events.d.ts',
+17 silly publish      'lib/typescript.events.ts',
+17 silly publish      'lib/typescript.events.js.map' ],
+17 silly publish   author: { name: 'Flippie Coetser' },
+17 silly publish   license: 'MIT',
+17 silly publish   bugs: { url: 'https://github.com/FlippieCoetser/Events/issues' },
+17 silly publish   homepage: 'https://github.com/FlippieCoetser/Events#readme',
+17 silly publish   devDependencies:
+17 silly publish    { chai: '^3.5.0',
+17 silly publish      'complexity-report': '^1.4.1',
+17 silly publish      del: '^2.2.0',
+17 silly publish      gulp: '^3.9.1',
+17 silly publish      'gulp-copy': '0.0.2',
+17 silly publish      'gulp-istanbul': '^0.10.3',
+17 silly publish      'gulp-mocha': '^2.2.0',
+17 silly publish      'gulp-sequence': '^0.4.5',
+17 silly publish      'gulp-sourcemaps': '^1.6.0',
+17 silly publish      'gulp-tslint': '^4.3.3',
+17 silly publish      'gulp-typescript': '*',
+17 silly publish      istanbul: '^0.4.2',
+17 silly publish      merge2: '^1.0.1',
+17 silly publish      mocha: '^2.3.4',
+17 silly publish      sinon: '^1.17.3',
+17 silly publish      'sinon-chai': '^2.8.0',
+17 silly publish      tslint: '^3.5.0',
+17 silly publish      typings: '^0.7.7' },
+17 silly publish   readme: '# Events\r\nImplementation of Node.Events in Typescript for Client and Server\r\nRefer to https://nodejs.org/api/events.html for additional information\r\n\r\n\r\n### Complexity Analysis\r\nExperimental Complexity Analysis\r\n\r\nCommand: plato -r -d complexity/report lib\r\n\r\nCommand: cr --config .complexrc ./lib/*.js',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: '4c00403bd2f11e2088f316d3c570da243bc99468',
+17 silly publish   _id: 'typescript.events@3.0.0',
+17 silly publish   _shasum: 'e69623b9c84707b0065f0d7770cdca2a9ebd4041',
+17 silly publish   _from: '.' }
+18 verbose getPublishConfig undefined
+19 silly mapToRegistry name typescript.events
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/typescript.events
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading C:\Users\AEQ00241\AppData\Roaming\npm-cache\typescript.events\3.0.0\package.tgz
+25 verbose request uri https://registry.npmjs.org/typescript.events
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 1:02:39 PM
+28 verbose request using bearer token for auth
+29 verbose request id f93a78788059f2f8
+30 http request PUT https://registry.npmjs.org/typescript.events
+31 http 403 https://registry.npmjs.org/typescript.events
+32 verbose headers { 'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=300',
+32 verbose headers   'content-length': '95',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Sat, 19 Mar 2016 12:02:41 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-ams4139-AMS',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1458388960.325855,VS0,VE1042' }
+33 verbose request invalidating C:\Users\AEQ00241\AppData\Roaming\npm-cache\registry.npmjs.org\typescript.events on PUT
+34 error publish Failed PUT 403
+35 verbose stack Error: "You cannot publish over the previously published version 3.0.0." : typescript.events
+35 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:247:14)
+35 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:170:14)
+35 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:354:22)
+35 verbose stack     at Request.emit (events.js:110:17)
+35 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1207:14)
+35 verbose stack     at Request.emit (events.js:129:20)
+35 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1153:12)
+35 verbose stack     at IncomingMessage.emit (events.js:129:20)
+35 verbose stack     at _stream_readable.js:908:16
+35 verbose stack     at process._tickCallback (node.js:355:11)
+36 verbose statusCode 403
+37 verbose pkgid typescript.events
+38 verbose cwd D:\Projects\Events
+39 error Windows_NT 6.1.7601
+40 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+41 error node v0.12.7
+42 error npm  v2.11.3
+43 error code E403
+44 error "You cannot publish over the previously published version 3.0.0." : typescript.events
+45 error If you need help, you may report this error at:
+45 error     <https://github.com/npm/npm/issues>
+46 verbose exit [ 1, true ]

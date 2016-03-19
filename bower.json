@@ -14,13 +14,23 @@
     "node"
   ],
   "ignore": [
-    "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "src",
+    "typings",
     "coverage",
     "complexity",
-    ".vscode"
+    ".vscode",
+    ".gitignore",
+    ".npmignore",
+    "complexity",
+    "gulpfile.js",
+    "intelliSense.gif",
+    "package.json",
+    "tconfig.json",
+    "tslint.json",
+    "typings.json",
+    "wallaby.js"
   ]
 }

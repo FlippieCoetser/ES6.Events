@@ -1,0 +1,26 @@
+{
+  "name": "typescript.events",
+  "description": "TypeScript Event Management",
+  "main": "lib/typescript.events.js",
+  "authors": [
+    "Flippie Coetser"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Event Management"
+  ],
+  "homepage": "https://github.com/FlippieCoetser/Events",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "src",
+    "coverage",
+    "complexity",
+    ".vscode"
+  ]
+}

@@ -1,0 +1,475 @@
+{
+  "uml:Model": {
+    "-xmlns:xmi": "http://www.omg.org/XMI",
+    "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "-xmlns:uml": "http://www.eclipse.org/uml2/4.0.0/UML",
+    "-xmi:version": "2.0",
+    "-xmi:id": "_cPcXcPQvEeWQJr9tIyoRLg",
+    "-name": "model",
+    "packagedElement": [
+      {
+        "-xsi:type": "uml:Interface",
+        "-xmi:id": "_cPcXe_QvEeWQJr9tIyoRLg",
+        "-name": "IListener",
+        "ownedOperation": {
+          "-xmi:id": "_cPcXfvQvEeWQJr9tIyoRLg",
+          "-name": "operation",
+          "ownedParameter": [
+            {
+              "-xmi:id": "_cPcXgfQvEeWQJr9tIyoRLg",
+              "-name": "returnParameter",
+              "-type": "_cPcXiPQvEeWQJr9tIyoRLg",
+              "-isUnique": "false",
+              "-direction": "return"
+            },
+            {
+              "-xmi:id": "_cPcXhPQvEeWQJr9tIyoRLg",
+              "-name": "parameter",
+              "-type": "_cPcX_vQvEeWQJr9tIyoRLg",
+              "-isUnique": "false",
+              "lowerValue": {
+                "-xsi:type": "uml:LiteralInteger",
+                "-xmi:id": "_cPcXh_QvEeWQJr9tIyoRLg"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "-xsi:type": "uml:Interface",
+        "-xmi:id": "_cPcXjvQvEeWQJr9tIyoRLg",
+        "-clientDependency": "_cPc-xvQvEeWQJr9tIyoRLg",
+        "-name": "IEvent",
+        "ownedOperation": [
+          {
+            "-xmi:id": "_cPcXkfQvEeWQJr9tIyoRLg",
+            "-name": "addListener",
+            "ownedParameter": [
+              {
+                "-xmi:id": "_cPcXlPQvEeWQJr9tIyoRLg",
+                "-name": "returnParameter",
+                "-type": "_cPcXjvQvEeWQJr9tIyoRLg",
+                "-isUnique": "false",
+                "-direction": "return"
+              },
+              {
+                "-xmi:id": "_cPcXl_QvEeWQJr9tIyoRLg",
+                "-name": "event",
+                "-type": "_cPcXi_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              },
+              {
+                "-xmi:id": "_cPcXmvQvEeWQJr9tIyoRLg",
+                "-name": "listener",
+                "-type": "_cPcXe_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              }
+            ]
+          },
+          {
+            "-xmi:id": "_cPcXnfQvEeWQJr9tIyoRLg",
+            "-name": "emit",
+            "ownedParameter": [
+              {
+                "-xmi:id": "_cPcXoPQvEeWQJr9tIyoRLg",
+                "-name": "returnParameter",
+                "-type": "_cPcX-_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false",
+                "-direction": "return"
+              },
+              {
+                "-xmi:id": "_cPcXo_QvEeWQJr9tIyoRLg",
+                "-name": "event",
+                "-type": "_cPcXi_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              },
+              {
+                "-xmi:id": "_cPcXpvQvEeWQJr9tIyoRLg",
+                "-name": "...a",
+                "-type": "_cPcX_vQvEeWQJr9tIyoRLg",
+                "-isUnique": "false",
+                "lowerValue": {
+                  "-xsi:type": "uml:LiteralInteger",
+                  "-xmi:id": "_cPcXqfQvEeWQJr9tIyoRLg"
+                },
+                "upperValue": {
+                  "-xsi:type": "uml:LiteralUnlimitedNatural",
+                  "-xmi:id": "_cPcXqvQvEeWQJr9tIyoRLg",
+                  "-value": "*"
+                }
+              }
+            ]
+          },
+          {
+            "-xmi:id": "_cPcXq_QvEeWQJr9tIyoRLg",
+            "-name": "getMaxListeners",
+            "ownedParameter": {
+              "-xmi:id": "_cPcXrvQvEeWQJr9tIyoRLg",
+              "-name": "returnParameter",
+              "-type": "_cPcX-_QvEeWQJr9tIyoRLg",
+              "-isUnique": "false",
+              "-direction": "return"
+            }
+          },
+          {
+            "-xmi:id": "_cPcXsfQvEeWQJr9tIyoRLg",
+            "-name": "listenerCount",
+            "ownedParameter": [
+              {
+                "-xmi:id": "_cPcXtPQvEeWQJr9tIyoRLg",
+                "-name": "returnParameter",
+                "-type": "_cPcYAfQvEeWQJr9tIyoRLg",
+                "-isUnique": "false",
+                "-direction": "return"
+              },
+              {
+                "-xmi:id": "_cPcXt_QvEeWQJr9tIyoRLg",
+                "-name": "event",
+                "-type": "_cPcXi_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              }
+            ]
+          },
+          {
+            "-xmi:id": "_cPcXuvQvEeWQJr9tIyoRLg",
+            "-name": "listeners",
+            "ownedParameter": [
+              {
+                "-xmi:id": "_cPcXvfQvEeWQJr9tIyoRLg",
+                "-name": "returnParameter",
+                "-type": "_cPcXe_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false",
+                "-direction": "return",
+                "lowerValue": {
+                  "-xsi:type": "uml:LiteralInteger",
+                  "-xmi:id": "_cPcXwPQvEeWQJr9tIyoRLg"
+                },
+                "upperValue": {
+                  "-xsi:type": "uml:LiteralUnlimitedNatural",
+                  "-xmi:id": "_cPcXwfQvEeWQJr9tIyoRLg",
+                  "-value": "*"
+                }
+              },
+              {
+                "-xmi:id": "_cPcXwvQvEeWQJr9tIyoRLg",
+                "-name": "event",
+                "-type": "_cPcXi_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              }
+            ]
+          },
+          {
+            "-xmi:id": "_cPcXxfQvEeWQJr9tIyoRLg",
+            "-name": "on",
+            "ownedParameter": [
+              {
+                "-xmi:id": "_cPcXyPQvEeWQJr9tIyoRLg",
+                "-name": "returnParameter",
+                "-type": "_cPcXjvQvEeWQJr9tIyoRLg",
+                "-isUnique": "false",
+                "-direction": "return"
+              },
+              {
+                "-xmi:id": "_cPcXy_QvEeWQJr9tIyoRLg",
+                "-name": "event",
+                "-type": "_cPcXi_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              },
+              {
+                "-xmi:id": "_cPcXzvQvEeWQJr9tIyoRLg",
+                "-name": "listener",
+                "-type": "_cPcXe_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              }
+            ]
+          },
+          {
+            "-xmi:id": "_cPcX0fQvEeWQJr9tIyoRLg",
+            "-name": "once",
+            "ownedParameter": [
+              {
+                "-xmi:id": "_cPcX1PQvEeWQJr9tIyoRLg",
+                "-name": "returnParameter",
+                "-type": "_cPcXjvQvEeWQJr9tIyoRLg",
+                "-isUnique": "false",
+                "-direction": "return"
+              },
+              {
+                "-xmi:id": "_cPcX1_QvEeWQJr9tIyoRLg",
+                "-name": "event",
+                "-type": "_cPcXi_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              },
+              {
+                "-xmi:id": "_cPcX2vQvEeWQJr9tIyoRLg",
+                "-name": "listener",
+                "-type": "_cPcXe_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              }
+            ]
+          },
+          {
+            "-xmi:id": "_cPcX3fQvEeWQJr9tIyoRLg",
+            "-name": "removeAllListeners",
+            "ownedParameter": [
+              {
+                "-xmi:id": "_cPcX4PQvEeWQJr9tIyoRLg",
+                "-name": "returnParameter",
+                "-type": "_cPcXjvQvEeWQJr9tIyoRLg",
+                "-isUnique": "false",
+                "-direction": "return"
+              },
+              {
+                "-xmi:id": "_cPcX4_QvEeWQJr9tIyoRLg",
+                "-name": "event",
+                "-type": "_cPcXi_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              }
+            ]
+          },
+          {
+            "-xmi:id": "_cPcX5vQvEeWQJr9tIyoRLg",
+            "-name": "removeListener",
+            "ownedParameter": [
+              {
+                "-xmi:id": "_cPcX6fQvEeWQJr9tIyoRLg",
+                "-name": "returnParameter",
+                "-type": "_cPcXjvQvEeWQJr9tIyoRLg",
+                "-isUnique": "false",
+                "-direction": "return"
+              },
+              {
+                "-xmi:id": "_cPcX7PQvEeWQJr9tIyoRLg",
+                "-name": "event",
+                "-type": "_cPcXi_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              },
+              {
+                "-xmi:id": "_cPcX7_QvEeWQJr9tIyoRLg",
+                "-name": "listener",
+                "-type": "_cPcXe_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              }
+            ]
+          },
+          {
+            "-xmi:id": "_cPcX8vQvEeWQJr9tIyoRLg",
+            "-name": "setMaxListeners",
+            "ownedParameter": [
+              {
+                "-xmi:id": "_cPcX9fQvEeWQJr9tIyoRLg",
+                "-name": "returnParameter",
+                "-type": "_cPcXjvQvEeWQJr9tIyoRLg",
+                "-isUnique": "false",
+                "-direction": "return"
+              },
+              {
+                "-xmi:id": "_cPcX-PQvEeWQJr9tIyoRLg",
+                "-name": "thresshold",
+                "-type": "_cPcYAfQvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "-xsi:type": "uml:Class",
+        "-xmi:id": "_cPc-gfQvEeWQJr9tIyoRLg",
+        "-clientDependency": "_cPc-j_QvEeWQJr9tIyoRLg",
+        "-name": "Event",
+        "ownedAttribute": [
+          {
+            "-xmi:id": "_cPc-hPQvEeWQJr9tIyoRLg",
+            "-name": "defaultMaxListeners",
+            "-visibility": "public",
+            "-isStatic": "true",
+            "-type": "_cPcYAfQvEeWQJr9tIyoRLg"
+          },
+          {
+            "-xmi:id": "_cPc-h_QvEeWQJr9tIyoRLg",
+            "-name": "_listeners",
+            "-visibility": "protected",
+            "-type": "_cPcX_vQvEeWQJr9tIyoRLg",
+            "lowerValue": {
+              "-xsi:type": "uml:LiteralInteger",
+              "-xmi:id": "_cPc-ivQvEeWQJr9tIyoRLg"
+            },
+            "upperValue": {
+              "-xsi:type": "uml:LiteralUnlimitedNatural",
+              "-xmi:id": "_cPc-i_QvEeWQJr9tIyoRLg",
+              "-value": "*"
+            }
+          },
+          {
+            "-xmi:id": "_cPc-jPQvEeWQJr9tIyoRLg",
+            "-name": "_maxListeners",
+            "-visibility": "private",
+            "-type": "_cPcYAfQvEeWQJr9tIyoRLg"
+          }
+        ],
+        "interfaceRealization": {
+          "-xmi:id": "_cPc-j_QvEeWQJr9tIyoRLg",
+          "-client": "_cPc-gfQvEeWQJr9tIyoRLg",
+          "-supplier": "_cPcXjvQvEeWQJr9tIyoRLg",
+          "-contract": "_cPcXjvQvEeWQJr9tIyoRLg"
+        },
+        "ownedOperation": [
+          {
+            "-xmi:id": "_cPc-kvQvEeWQJr9tIyoRLg",
+            "-name": "_filterMatchingEvents",
+            "-visibility": "private",
+            "ownedParameter": [
+              {
+                "-xmi:id": "_cPc-lfQvEeWQJr9tIyoRLg",
+                "-name": "returnParameter",
+                "-type": "_cPcX_vQvEeWQJr9tIyoRLg",
+                "-isUnique": "false",
+                "-direction": "return",
+                "lowerValue": {
+                  "-xsi:type": "uml:LiteralInteger",
+                  "-xmi:id": "_cPc-mPQvEeWQJr9tIyoRLg"
+                },
+                "upperValue": {
+                  "-xsi:type": "uml:LiteralUnlimitedNatural",
+                  "-xmi:id": "_cPc-mfQvEeWQJr9tIyoRLg",
+                  "-value": "*"
+                }
+              },
+              {
+                "-xmi:id": "_cPc-mvQvEeWQJr9tIyoRLg",
+                "-name": "event",
+                "-type": "_cPcXi_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              }
+            ]
+          },
+          {
+            "-xmi:id": "_cPc-nfQvEeWQJr9tIyoRLg",
+            "-name": "_filterNonMatchingEvents",
+            "-visibility": "private",
+            "ownedParameter": [
+              {
+                "-xmi:id": "_cPc-oPQvEeWQJr9tIyoRLg",
+                "-name": "returnParameter",
+                "-type": "_cPcX_vQvEeWQJr9tIyoRLg",
+                "-isUnique": "false",
+                "-direction": "return",
+                "lowerValue": {
+                  "-xsi:type": "uml:LiteralInteger",
+                  "-xmi:id": "_cPc-o_QvEeWQJr9tIyoRLg"
+                },
+                "upperValue": {
+                  "-xsi:type": "uml:LiteralUnlimitedNatural",
+                  "-xmi:id": "_cPc-pPQvEeWQJr9tIyoRLg",
+                  "-value": "*"
+                }
+              },
+              {
+                "-xmi:id": "_cPc-pfQvEeWQJr9tIyoRLg",
+                "-name": "event",
+                "-type": "_cPcXi_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              }
+            ]
+          },
+          {
+            "-xmi:id": "_cPc-qPQvEeWQJr9tIyoRLg",
+            "-name": "_register",
+            "-visibility": "private",
+            "ownedParameter": [
+              {
+                "-xmi:id": "_cPc-q_QvEeWQJr9tIyoRLg",
+                "-name": "returnParameter",
+                "-type": "_cPcXiPQvEeWQJr9tIyoRLg",
+                "-isUnique": "false",
+                "-direction": "return"
+              },
+              {
+                "-xmi:id": "_cPc-rvQvEeWQJr9tIyoRLg",
+                "-name": "event",
+                "-type": "_cPcXi_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              },
+              {
+                "-xmi:id": "_cPc-sfQvEeWQJr9tIyoRLg",
+                "-name": "listener",
+                "-type": "_cPcXe_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              },
+              {
+                "-xmi:id": "_cPc-tPQvEeWQJr9tIyoRLg",
+                "-name": "once",
+                "-type": "_cPcX-_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              }
+            ]
+          },
+          {
+            "-xmi:id": "_cPc-t_QvEeWQJr9tIyoRLg",
+            "-name": "_returnListenerLimit",
+            "-visibility": "private",
+            "ownedParameter": {
+              "-xmi:id": "_cPc-uvQvEeWQJr9tIyoRLg",
+              "-name": "returnParameter",
+              "-type": "_cPcYAfQvEeWQJr9tIyoRLg",
+              "-isUnique": "false",
+              "-direction": "return"
+            }
+          },
+          {
+            "-xmi:id": "_cPc-vfQvEeWQJr9tIyoRLg",
+            "-name": "_checkListenerLimitReached",
+            "-visibility": "private",
+            "ownedParameter": [
+              {
+                "-xmi:id": "_cPc-wPQvEeWQJr9tIyoRLg",
+                "-name": "returnParameter",
+                "-type": "_cPcX-_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false",
+                "-direction": "return"
+              },
+              {
+                "-xmi:id": "_cPc-w_QvEeWQJr9tIyoRLg",
+                "-name": "event",
+                "-type": "_cPcXi_QvEeWQJr9tIyoRLg",
+                "-isUnique": "false"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "-xsi:type": "uml:Dependency",
+        "-xmi:id": "_cPc-xvQvEeWQJr9tIyoRLg",
+        "-client": "_cPcXjvQvEeWQJr9tIyoRLg",
+        "-supplier": "_cPcXe_QvEeWQJr9tIyoRLg"
+      },
+      {
+        "-xsi:type": "uml:DataType",
+        "-xmi:id": "_cPcX-_QvEeWQJr9tIyoRLg",
+        "-name": "boolean"
+      },
+      {
+        "-xsi:type": "uml:DataType",
+        "-xmi:id": "_cPcX_vQvEeWQJr9tIyoRLg",
+        "-name": "any"
+      },
+      {
+        "-xsi:type": "uml:DataType",
+        "-xmi:id": "_cPcYAfQvEeWQJr9tIyoRLg",
+        "-name": "number"
+      },
+      {
+        "-xsi:type": "uml:DataType",
+        "-xmi:id": "_cPcXiPQvEeWQJr9tIyoRLg",
+        "-name": "void"
+      },
+      {
+        "-xsi:type": "uml:DataType",
+        "-xmi:id": "_cPcXi_QvEeWQJr9tIyoRLg",
+        "-name": "string"
+      }
+    ]
+  }
+}

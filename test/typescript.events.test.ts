@@ -11,7 +11,7 @@ describe("Events", () => {
     it("Event should have static default limit of 10 listerens", () => {
        Event.defaultMaxListeners.should.eql(10);
     });
-    it("Return event max listeners limit when no event instance listener limit set", ()=>{
+    it("Return event max listeners limit when no event instance listener limit set", () => {
         let Output: IEvent = new Event();
         let Limit: number = Event.defaultMaxListeners;
         Output.getMaxListeners().should.eql(Limit);
@@ -140,7 +140,7 @@ describe("Events", () => {
        let listenerOne = sinon.spy();
        let listenerTwo = sinon.spy();
        let event: string = "event";
-       Event.defaultMaxListeners = 1;
+       Event.defaultMaxListeners = Limit;
        Output.on(event, listenerOne);
        Output.on(event, listenerTwo);
        Output.listenerCount(event).should.eql(1);

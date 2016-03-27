@@ -1,5 +1,5 @@
 export interface IListener {
-    (parameter?: string): void;
+    <T>(arg?: T[]): void;
 }
 
 export interface IEvent {

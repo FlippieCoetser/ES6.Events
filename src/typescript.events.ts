@@ -3,7 +3,7 @@ export interface IListener {
 }
 
 export interface IEvent {
-    addListener(event: string, listener: IListener);
+    addListener(event: string, listener: IListener): IEvent;
     emit(event: string, ...a: any[]): boolean;
     getMaxListeners(): number;
     listenerCount(event: string): number;
@@ -17,11 +17,10 @@ export interface IEvent {
 
 export class Event implements IEvent {
     public static defaultMaxListeners: number = 10;
-    public static debug: boolean = false;
     protected _listeners: any[] = [];
     private _maxListeners: number = null;
-    public addListener(event: string, listener) {
-        this.on(event, listener);
+    public addListener(event: string, listener): IEvent {
+        return this.on(event, listener);
     }
     public emit(event: string, ...a: any[]): boolean {
         let listeners = this._listeners.filter(item => item.event === event);

@@ -5,7 +5,7 @@
     "packagedElement": [
       {
         "-xsi:type": "uml:Interface",
-        "-xmi:id": "_cPcXe_QvEeWQJr9tIyoRLg",
+        "-xmi:id": "interfaceIListener",
         "-name": "IListener",
         "ownedOperation": {
           "-xmi:id": "_cPcXfvQvEeWQJr9tIyoRLg",
@@ -33,7 +33,7 @@
       },
       {
         "-xsi:type": "uml:Interface",
-        "-xmi:id": "_cPcXjvQvEeWQJr9tIyoRLg",
+        "-xmi:id": "interfaceIEvent",
         "-clientDependency": "_cPc-xvQvEeWQJr9tIyoRLg",
         "-name": "IEvent",
         "ownedOperation": [
@@ -44,7 +44,7 @@
               {
                 "-xmi:id": "_cPcXlPQvEeWQJr9tIyoRLg",
                 "-name": "returnParameter",
-                "-type": "_cPcXjvQvEeWQJr9tIyoRLg",
+                "-type": "interfaceIEvent",
                 "-isUnique": "false",
                 "-direction": "return"
               },
@@ -57,7 +57,7 @@
               {
                 "-xmi:id": "_cPcXmvQvEeWQJr9tIyoRLg",
                 "-name": "listener",
-                "-type": "_cPcXe_QvEeWQJr9tIyoRLg",
+                "-type": "interfaceIListener",
                 "-isUnique": "false"
               }
             ]
@@ -133,7 +133,7 @@
               {
                 "-xmi:id": "_cPcXvfQvEeWQJr9tIyoRLg",
                 "-name": "returnParameter",
-                "-type": "_cPcXe_QvEeWQJr9tIyoRLg",
+                "-type": "interfaceIListener",
                 "-isUnique": "false",
                 "-direction": "return",
                 "lowerValue": {
@@ -161,7 +161,7 @@
               {
                 "-xmi:id": "_cPcXyPQvEeWQJr9tIyoRLg",
                 "-name": "returnParameter",
-                "-type": "_cPcXjvQvEeWQJr9tIyoRLg",
+                "-type": "interfaceIEvent",
                 "-isUnique": "false",
                 "-direction": "return"
               },
@@ -174,7 +174,7 @@
               {
                 "-xmi:id": "_cPcXzvQvEeWQJr9tIyoRLg",
                 "-name": "listener",
-                "-type": "_cPcXe_QvEeWQJr9tIyoRLg",
+                "-type": "interfaceIListener",
                 "-isUnique": "false"
               }
             ]
@@ -186,7 +186,7 @@
               {
                 "-xmi:id": "_cPcX1PQvEeWQJr9tIyoRLg",
                 "-name": "returnParameter",
-                "-type": "_cPcXjvQvEeWQJr9tIyoRLg",
+                "-type": "interfaceIEvent",
                 "-isUnique": "false",
                 "-direction": "return"
               },
@@ -199,7 +199,7 @@
               {
                 "-xmi:id": "_cPcX2vQvEeWQJr9tIyoRLg",
                 "-name": "listener",
-                "-type": "_cPcXe_QvEeWQJr9tIyoRLg",
+                "-type": "interfaceIListener",
                 "-isUnique": "false"
               }
             ]
@@ -211,7 +211,7 @@
               {
                 "-xmi:id": "_cPcX4PQvEeWQJr9tIyoRLg",
                 "-name": "returnParameter",
-                "-type": "_cPcXjvQvEeWQJr9tIyoRLg",
+                "-type": "interfaceIEvent",
                 "-isUnique": "false",
                 "-direction": "return"
               },
@@ -230,7 +230,7 @@
               {
                 "-xmi:id": "_cPcX6fQvEeWQJr9tIyoRLg",
                 "-name": "returnParameter",
-                "-type": "_cPcXjvQvEeWQJr9tIyoRLg",
+                "-type": "interfaceIEvent",
                 "-isUnique": "false",
                 "-direction": "return"
               },
@@ -243,7 +243,7 @@
               {
                 "-xmi:id": "_cPcX7_QvEeWQJr9tIyoRLg",
                 "-name": "listener",
-                "-type": "_cPcXe_QvEeWQJr9tIyoRLg",
+                "-type": "interfaceIListener",
                 "-isUnique": "false"
               }
             ]
@@ -255,7 +255,7 @@
               {
                 "-xmi:id": "_cPcX9fQvEeWQJr9tIyoRLg",
                 "-name": "returnParameter",
-                "-type": "_cPcXjvQvEeWQJr9tIyoRLg",
+                "-type": "interfaceIEvent",
                 "-isUnique": "false",
                 "-direction": "return"
               },
@@ -271,7 +271,7 @@
       },
       {
         "-xsi:type": "uml:Class",
-        "-xmi:id": "_cPc-gfQvEeWQJr9tIyoRLg",
+        "-xmi:id": "classEvent",
         "-clientDependency": "_cPc-j_QvEeWQJr9tIyoRLg",
         "-name": "Event",
         "ownedAttribute": [
@@ -306,9 +306,9 @@
         ],
         "interfaceRealization": {
           "-xmi:id": "_cPc-j_QvEeWQJr9tIyoRLg",
-          "-client": "_cPc-gfQvEeWQJr9tIyoRLg",
-          "-supplier": "_cPcXjvQvEeWQJr9tIyoRLg",
-          "-contract": "_cPcXjvQvEeWQJr9tIyoRLg"
+          "-client": "classEvent",
+          "-supplier": "interfaceIEvent",
+          "-contract": "interfaceIEvent"
         },
         "ownedOperation": [
           {
@@ -390,7 +390,7 @@
               {
                 "-xmi:id": "_cPc-sfQvEeWQJr9tIyoRLg",
                 "-name": "listener",
-                "-type": "_cPcXe_QvEeWQJr9tIyoRLg",
+                "-type": "interfaceIListener",
                 "-isUnique": "false"
               },
               {
@@ -438,8 +438,8 @@
       {
         "-xsi:type": "uml:Dependency",
         "-xmi:id": "_cPc-xvQvEeWQJr9tIyoRLg",
-        "-client": "_cPcXjvQvEeWQJr9tIyoRLg",
-        "-supplier": "_cPcXe_QvEeWQJr9tIyoRLg"
+        "-client": "interfaceIEvent",
+        "-supplier": "interfaceIListener"
       }
     ]
   }

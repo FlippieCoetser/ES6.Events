@@ -23,17 +23,20 @@ export class Event implements IEvent {
         return this.on(event, listener);
     }
     public emit(event: string, ...a: any[]): boolean {
-        let listeners = this._listeners.filter(this._filterCondition(event, "event", true));
+        let filterEvent = [{field: "event", value: event, operator:  "eq"}];
+        let listeners = this._listeners.filter(this._filter(filterEvent));
         /* istanbul ignore next */
         listeners.forEach(item => item.listener.apply({}, a || []));
-        this._listeners = listeners.filter(item => !item.once);
+        let filterOnce = [{field: "once", value: true, operator: "neq"}]
+        this._listeners = listeners.filter(this._filter(filterOnce));
         return listeners.length !== 0 ? true : false;
     }
     public getMaxListeners(): number {
         return this._maxListeners === null ? Event.defaultMaxListeners : this._maxListeners;
     }
     public listenerCount(event: string): number {
-        return this._listeners.filter(this._filterCondition(event, "event", true))
+        let filterEvent = [{field: "event", value: event, operator:  "eq"}];
+        return this._listeners.filter(this._filter(filterEvent))
         .length;
     }
     public listeners(event: string): Array<IListener> {
@@ -64,15 +67,23 @@ export class Event implements IEvent {
         return this;
     }
     private _filterMatchingEvents(event: string): any[] {
-        return this._listeners.filter(this._filterCondition(event, "event", true));
-    }
-    private _filterCondition (value: string, parameter: string, operator: boolean){
-        let equal = item => item[parameter] === value;
-        let notEqual = item => item[parameter] !== value; 
-        return operator ? equal : notEqual;
+        let filterEvent = [{field: "event", value: event, operator:  "eq"}];
+        return this._listeners.filter(this._filter(filterEvent));
     }
     private _filterNonMatchingEvents(event: string): any[] {
-        return this._listeners.filter(this._filterCondition(event, "event", false));
+        let filterNotEvent = [{field: "event", value: event, operator:  "neq"}];        
+        return this._listeners.filter(this._filter(filterNotEvent));
+    }
+    private _filter(filters: any){        
+        return item => { 
+            let condition: any;
+            filters.forEach(filter => {
+                let operator = filter.operator === "eq" ? true: false;
+                let test = item[filter.field] === filter.value;
+                condition = operator && test; 
+            });    
+            return condition;
+        }; 
     }
     private _register(event: string, listener: IListener, once: boolean): void {
         !this._checkListenerLimitReached(event) && this._listeners.unshift({event, listener, once});

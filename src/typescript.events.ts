@@ -24,7 +24,7 @@ export class Event implements IEvent {
         this.on(event, listener);
     }
     public emit(event: string, ...a: any[]): boolean {
-        let listeners = this._listeners.filter(item => item.event === event);
+        let listeners = this._listeners.filter(this._filterCondition(event, "event", true));
         /* istanbul ignore next */
         listeners.forEach(item => item.listener.apply({}, a || []));
         this._listeners = listeners.filter(item => !item.once);
@@ -34,7 +34,7 @@ export class Event implements IEvent {
         return this._maxListeners === null ? Event.defaultMaxListeners : this._maxListeners;
     }
     public listenerCount(event: string): number {
-        return this._listeners.filter(item => item.event === event)
+        return this._listeners.filter(this._filterCondition(event, "event", true))
         .length;
     }
     public listeners(event: string): Array<IListener> {
@@ -56,7 +56,7 @@ export class Event implements IEvent {
     }
     public removeListener(event: string, listener: IListener): IEvent {
         this._listeners = this._listeners.filter(item =>
-        !((item.event === event) && (item.listener === listener))
+        !(item.event === event) || !(item.listener === listener)
         );
         return this;
     }
@@ -65,10 +65,15 @@ export class Event implements IEvent {
         return this;
     }
     private _filterMatchingEvents(event: string): any[] {
-        return this._listeners.filter( item => item.event === event);
+        return this._listeners.filter(this._filterCondition(event, "event", true));
+    }
+    private _filterCondition (value: string, parameter: string, operator: boolean){
+        let equal = item => item[parameter] === value;
+        let notEqual = item => item[parameter] !== value; 
+        return operator ? equal : notEqual;
     }
     private _filterNonMatchingEvents(event: string): any[] {
-        return this._listeners.filter(item => item.event !== event);
+        return this._listeners.filter(this._filterCondition(event, "event", false));
     }
     private _register(event: string, listener: IListener, once: boolean): void {
         !this._checkListenerLimitReached(event) && this._listeners.unshift({event, listener, once});

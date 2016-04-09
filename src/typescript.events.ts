@@ -1,5 +1,11 @@
 export interface IListener {
-    <T>(arg?: T[]): void;
+    (...arg): void;
+}
+
+export interface IItem {
+    event: string;
+    listener: IListener;
+    once: boolean;
 }
 
 export interface IEvent {
@@ -17,84 +23,79 @@ export interface IEvent {
 
 export class Event implements IEvent {
     public static defaultMaxListeners: number = 10;
-    protected _listeners: any[] = [];
+    protected _listeners: Array<IItem> = [];
     private _maxListeners: number = null;
     public addListener(event: string, listener): IEvent {
         return this.on(event, listener);
     }
-    public emit(event: string, ...a: any[]): boolean {
-        let filterEvent = [{field: "event", value: event, operator:  "eq"}];
-        let listeners = this._listeners.filter(this._filter(filterEvent));
-        /* istanbul ignore next */
-        listeners.forEach(item => item.listener.apply({}, a || []));
-        let filterOnce = [{field: "once", value: true, operator: "neq"}]
-        this._listeners = listeners.filter(this._filter(filterOnce));
-        return listeners.length !== 0 ? true : false;
+    public emit(event: string, ...a): boolean {
+        let listenerAvailable = this.listenerCount(event) !== 0; 
+        let items = this._filter(this._listeners, this._matchingEvents, event);
+        this._invokeListeners(items, ...a);
+        this._listeners = this._filter(items, this._nonOnce);
+        return listenerAvailable;
     }
     public getMaxListeners(): number {
         return this._maxListeners === null ? Event.defaultMaxListeners : this._maxListeners;
     }
     public listenerCount(event: string): number {
-        let filterEvent = [{field: "event", value: event, operator:  "eq"}];
-        return this._listeners.filter(this._filter(filterEvent))
-        .length;
+        return this._filter(this._listeners, this._matchingEvents, event).length;
     }
     public listeners(event: string): Array<IListener> {
-        return this._filterMatchingEvents(event)
+        return this._filter(this._listeners, this._matchingEvents,event)
         .map(item => item.listener)
         .reverse();
     }
     public on(event: string, listener: IListener ): IEvent {
-        this._register(event, listener, false);
+        this._register({event, listener, once: false});
         return this;
     }
     public once(event: string, listener: IListener ): IEvent {
-       this._register(event, listener, true);
+       this._register({event, listener, once: true});
        return this;
     }
     public removeAllListeners(event: string): IEvent {
-        this._listeners = this._filterNonMatchingEvents(event);
+        this._listeners = this._filter(this._listeners,this._nonMatchingEvents,event);
         return this;
     }
     public removeListener(event: string, listener: IListener): IEvent {
-        this._listeners = this._listeners.filter(item =>
-        !(item.event === event) || !(item.listener === listener)
-        );
+        this._listeners = this._filter(this._listeners, this._matchingEventsAndListener, event, listener);
         return this;
     }
     public setMaxListeners(thresshold: number): IEvent {
         this._maxListeners = thresshold;
         return this;
     }
-    private _filterMatchingEvents(event: string): any[] {
-        let filterEvent = [{field: "event", value: event, operator:  "eq"}];
-        return this._listeners.filter(this._filter(filterEvent));
+    private _matchingEvents(item: IItem, event: string): boolean {
+        return item.event === event;
     }
-    private _filterNonMatchingEvents(event: string): any[] {
-        let filterNotEvent = [{field: "event", value: event, operator:  "neq"}];        
-        return this._listeners.filter(this._filter(filterNotEvent));
+    private _matchingEventsAndListener(item: IItem, event: string, listener: IListener): boolean {
+        return !(item.event === event) || !(item.listener === listener)
     }
-    private _filter(filters: any){        
-        return item => { 
-            let condition: any;
-            filters.forEach(filter => {
-                let operator = filter.operator === "eq" ? true: false;
-                let test = item[filter.field] === filter.value;
-                condition = operator && test; 
-            });    
-            return condition;
-        }; 
+    private _nonMatchingEvents(item: IItem, event: string): boolean {
+        return item.event !== event;
     }
-    private _register(event: string, listener: IListener, once: boolean): void {
-        !this._checkListenerLimitReached(event) && this._listeners.unshift({event, listener, once});
-        return;
+    private _nonOnce(item: IItem): boolean {
+        return !item.once;
+    }
+    private _filter(items: Array<IItem>, filter: any, ...arg): Array<IItem> {
+        return items.filter(item => filter(item, ...arg));
+    }
+    private _invokeListeners(items: Array<IItem>, ...a): void {
+        items.map(item => item.listener(...a));
+    }
+    private _register(item: IItem): void {
+        if (!this._checkListenerLimitReached(item.event)) {
+            this._listeners.unshift(item);
+            return;
+        }
+        console.log("Listner Limit Reached");
+        return ;
     }
     private _returnListenerLimit(): number {
         return this._maxListeners === null ? Event.defaultMaxListeners : this._maxListeners;
     }
     private _checkListenerLimitReached(event: string): boolean {
-        let limitReached = this.listenerCount(event) === this._returnListenerLimit() ? true : false;
-        limitReached && console.log("Listener Limit Reached");
-        return limitReached;
+        return this.listenerCount(event) === this._returnListenerLimit();
     }
 }

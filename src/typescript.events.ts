@@ -29,7 +29,7 @@ export class Event implements IEvent {
         return this.on(event, listener);
     }
     public emit(event: string, ...a): boolean {
-        let listenerAvailable = this.listenerCount(event) !== 0; 
+        let listenerAvailable = this.listenerCount(event) !== 0;
         let items = this._filter(this._listeners, this._matchingEvents, event);
         this._invokeListeners(items, ...a);
         this._listeners = this._filter(items, this._nonOnce);
@@ -42,7 +42,7 @@ export class Event implements IEvent {
         return this._filter(this._listeners, this._matchingEvents, event).length;
     }
     public listeners(event: string): Array<IListener> {
-        return this._filter(this._listeners, this._matchingEvents,event)
+        return this._filter(this._listeners, this._matchingEvents, event)
         .map(item => item.listener)
         .reverse();
     }
@@ -55,7 +55,7 @@ export class Event implements IEvent {
        return this;
     }
     public removeAllListeners(event: string): IEvent {
-        this._listeners = this._filter(this._listeners,this._nonMatchingEvents,event);
+        this._listeners = this._filter(this._listeners, this._nonMatchingEvents, event);
         return this;
     }
     public removeListener(event: string, listener: IListener): IEvent {
@@ -70,7 +70,7 @@ export class Event implements IEvent {
         return item.event === event;
     }
     private _matchingEventsAndListener(item: IItem, event: string, listener: IListener): boolean {
-        return !(item.event === event) || !(item.listener === listener)
+        return !(item.event === event) || !(item.listener === listener);
     }
     private _nonMatchingEvents(item: IItem, event: string): boolean {
         return item.event !== event;

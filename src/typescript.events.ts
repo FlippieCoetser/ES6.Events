@@ -21,12 +21,12 @@ export interface IEvent {
     setMaxListeners(thressholds: number): IEvent;
 }
 
-export interface IList<T> extends Array<T> {
+interface IList<T> extends Array<T> {
     [index: number]: T;
     where(filter: any, ...arg): IList<T>;
 }
 
-export class List<T> extends Array<T> implements IList<T> {
+class List<T> extends Array<T> implements IList<T> {
     private _items: List<T> = <List<T>>[];
     constructor(items?: Array<T>) {
         super();

@@ -2,13 +2,13 @@
   "name": "typescript.events",
   "version": "6.0.0",
   "description": "TypeScript Event Management",
-  "main": "lib/typescript.events.js",
-  "typings": "lib/typescript.events.d.ts",
+  "main": "lib/events.js",
+  "typings": "lib/events.d.ts",
   "typescript": {
-    "definitions": "lib/typescript.events.d.ts"
+    "definitions": "lib/events.d.ts"
   },
   "scripts": {
-    "pretest": "tsc && tsc --module commonjs test/typescript.events.test.ts",
+    "pretest": "tsc && tsc --module commonjs test/events.test.ts",
     "test": "mocha",
     "setup": "typings install"
   },
@@ -20,10 +20,10 @@
     "Event Management"
   ],
   "files": [
-    "lib/typescript.events.js",
-    "lib/typescript.events.d.ts",
-    "lib/typescript.events.ts",
-    "lib/typescript.events.js.map"
+    "lib/events.js",
+    "lib/events.d.ts",
+    "lib/events.ts",
+    "lib/events.js.map"
   ],
   "author": "Flippie Coetser",
   "license": "MIT",
@@ -32,6 +32,10 @@
   },
   "homepage": "https://github.com/FlippieCoetser/Events#readme",
   "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
+    "@types/sinon": "^2.3.6",
+    "@types/sinon-chai": "^2.7.29",
     "chai": "^3.5.0",
     "complexity-report": "^1.4.1",
     "del": "^2.2.0",
@@ -49,6 +53,8 @@
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "tslint": "^3.5.0",
+    "typescript": "^2.5.3",
     "typings": "^0.7.7"
-  }
+  },
+  "dependencies": {}
 }

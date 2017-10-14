@@ -1,10 +1,13 @@
 module.exports = function (wallaby) {
   return {
     files: [
-      'src/typescript.events.ts'
+      'src/events.ts',
+      'src/dictionary.ts'
     ],
     tests: [
-      'test/typescript.events.test.ts'
+      'test/bootstrap.test.ts',
+      'test/events.test.ts',
+      'test/dictionary.test.ts'
     ],
     testFramework: 'mocha',
     env: {

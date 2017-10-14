@@ -10,64 +10,11 @@ var gulp = require('gulp'),
    sequence = require('gulp-sequence'),
    istanbul = require('gulp-istanbul');
    
-var tsProject = tsc.createProject('tsconfig.json');
+let Project = tsc.createProject('tsconfig.json');
 
 //***************************************************************************
-//* LINT
+//* CLEAN
 //***************************************************************************
-gulp.task('src:lint', function(){
-   return gulp.src([
-       "src/typescript.events.ts"
-   ])
-   .pipe(lint({}))
-   .pipe(lint.report('prose')); 
-});
-
-//***************************************************************************
-//* BUILD
-//***************************************************************************
-gulp.task('src:build', function(){
-   var tsResult = tsProject.src()
-       .pipe(sourcemaps.init())
-       .pipe(tsc(tsProject));
-   
-   return merge([
-      tsResult.dts.pipe(gulp.dest('./src')),
-      tsResult.js.pipe(sourcemaps.write('./')).pipe(gulp.dest('./src'))     
-   ]);
-   
-});
-
-gulp.task('build', sequence('clean', 'src:lint', 'src:build'));
-
-//***************************************************************************
-//* TEST
-//***************************************************************************
-gulp.task('test:build', function(){
-    return gulp.src('./test/*.ts')
-        .pipe(tsc({
-           module: "commonjs"
-        }))
-        .pipe(gulp.dest('./test'));
-});
-gulp.task('test:coverage', function(){
-    return gulp.src([
-        'src/**/*.js'
-    ])
-    .pipe(istanbul())
-    .pipe(istanbul.hookRequire());
-});
-gulp.task('test:mocha', function(){
-   return gulp.src('./test/*.js', {read: false})
-          .pipe(mocha({reporter: 'spec'}))
-          .pipe(istanbul.writeReports()); 
-});
-gulp.task('test', sequence('build', 'test:build', 'test:coverage', 'test:mocha'));
-
-//***************************************************************************
-//* PUBLISH
-//***************************************************************************
-
 gulp.task('clean:lib', function () {
     return del([
         "lib/*.*"
@@ -77,13 +24,91 @@ gulp.task('clean:src', function () {
     return del([
         "src/*.js",
         "src/*.d.ts",
-        "src/*.js.map",
+        "src/*.map"
+    ]);
+});
+gulp.task('clean:test', function () {
+    return del([
         "test/*.js"
     ]);
 });
-gulp.task('clean', ['clean:lib', 'clean:src']);
-gulp.task('copy', function(){
-    return gulp.src('./src/*.*')
-           .pipe(copy('./lib', {prefix: 2})); 
+gulp.task('clean', ['clean:lib', 'clean:src', 'clean:test']);
+
+//***************************************************************************
+//* LINT
+//***************************************************************************
+gulp.task('lint:src', function(){
+    return gulp
+        .src([
+            "src/*.ts"
+        ])
+        .pipe(lint({}))
+        .pipe(lint.report('prose')); 
 });
-gulp.task('publish', sequence('build', 'copy', 'clean:src'));
+gulp.task('lint', sequence('clean:src', 'lint:src'));
+
+//***************************************************************************
+//* BUILD
+//***************************************************************************
+gulp.task('build:src', function(){
+    var tsResult = Project
+        .src()
+        .pipe(sourcemaps.init())
+        .pipe(Project());
+   
+    return merge([
+        tsResult.dts
+            .pipe(gulp.dest('./src')),
+        tsResult.js
+            .pipe(sourcemaps.write('./'))
+            .pipe(gulp.dest('./src'))     
+    ]); 
+});
+
+gulp.task('build', sequence('lint', 'build:src'));
+
+//***************************************************************************
+//* TEST
+//***************************************************************************
+gulp.task('test:build', function(){
+    return gulp
+        .src('./test/*.ts')
+        .pipe(tsc({
+            module: "commonjs"
+        }))
+        .pipe(gulp.dest('./test'));
+});
+gulp.task('test:coverage', function(){
+    return gulp
+        .src([
+            'src/*.js'
+        ])
+        .pipe(istanbul())
+        .pipe(istanbul.hookRequire());
+});
+gulp.task('test:mocha', function(){
+    return gulp
+        .src('test/*.js', {read: false})
+        .pipe(mocha({reporter: 'spec'}))
+        .pipe(istanbul.writeReports()); 
+});
+gulp.task('test', sequence('build', 'test:build', 'test:coverage', 'test:mocha', 'clean'));
+
+//***************************************************************************
+//* PUBLISH
+//***************************************************************************
+gulp.task('build:lib', function(){
+    var tsResult = Project
+        .src()
+        .pipe(sourcemaps.init())
+        .pipe(Project());
+   
+    return merge([
+        tsResult.dts
+            .pipe(gulp.dest('./lib')),
+        tsResult.js
+            .pipe(sourcemaps.write('./'))
+            .pipe(gulp.dest('./lib'))     
+    ]); 
+});
+gulp.task('publish', sequence('build:lib'));

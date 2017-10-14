@@ -1,16 +1,12 @@
 {
   "name": "typescript.events",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "description": "TypeScript Event Management",
   "main": "lib/events.js",
-  "typings": "lib/events.d.ts",
-  "typescript": {
-    "definitions": "lib/events.d.ts"
-  },
+  "types": "lib/events.d.ts",
   "scripts": {
-    "pretest": "tsc && tsc --module commonjs test/events.test.ts",
-    "test": "mocha",
-    "setup": "typings install"
+    "pretest": "tsc && tsc @test/.tests",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",

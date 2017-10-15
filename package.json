@@ -24,9 +24,8 @@
     "Event Management"
   ],
   "files": [
-    "lib/events.js",
-    "lib/events.d.ts",
-    "lib/events.js.map"
+    "lib/server/events.js",
+    "lib/server/events.d.ts"
   ],
   "author": "Flippie Coetser",
   "license": "MIT",

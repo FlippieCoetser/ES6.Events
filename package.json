@@ -1,6 +1,6 @@
 {
   "name": "typescript.events",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "description": "TypeScript Event Management",
   "main": "lib/server/events.js",
   "types": "lib/server/events.d.ts",
@@ -9,6 +9,7 @@
     "lint": "./tasks/lint.js"
   },
   "scripts": {
+    "preinstall": "npm link",
     "lint": "lint",
     "build": "clean && lint && tsc -p typescript.build.json",
     "pretest": "npm run build && tsc -p typescript.test.json",

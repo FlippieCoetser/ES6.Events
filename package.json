@@ -1,6 +1,6 @@
 {
   "name": "typescript.events",
-  "version": "7.6.0",
+  "version": "7.7.0",
   "description": "TypeScript Event Management",
   "main": "lib/server/events.js",
   "types": "lib/server/events.d.ts",
@@ -11,7 +11,8 @@
     "pretest": "npm run build && tsc -p typescript.test.json",
     "test": "nyc mocha",
     "package": "tsc -p typescript.package.json",
-    "report": "nyc report --reporter=lcov"
+    "report": "nyc report --reporter=lcov",
+    "prepublish": "npm run package"
   },
   "repository": {
     "type": "git",

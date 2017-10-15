@@ -2,8 +2,8 @@
   "name": "typescript.events",
   "version": "7.0.0",
   "description": "TypeScript Event Management",
-  "main": "lib/events.js",
-  "types": "lib/events.d.ts",
+  "main": "lib/server/events.js",
+  "types": "lib/server/events.d.ts",
   "bin": {
     "clean": "./tasks/clean.js",
     "lint": "./tasks/lint.js"

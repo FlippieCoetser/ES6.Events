@@ -1,6 +1,6 @@
 {
   "name": "typescript.events",
-  "version": "7.3.0",
+  "version": "7.4.0",
   "description": "TypeScript Event Management",
   "main": "lib/server/events.js",
   "types": "lib/server/events.d.ts",
@@ -10,7 +10,7 @@
   },
   "scripts": {
     "lint": "lint",
-    "prebuild": "npm link",
+    "postintall": "npm link",
     "build": "clean && lint && tsc -p typescript.build.json",
     "pretest": "npm run build && tsc -p typescript.test.json",
     "test": "nyc mocha",

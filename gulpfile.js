@@ -11,6 +11,11 @@ var gulp = require('gulp'),
    istanbul = require('gulp-istanbul');
    
 let Project = tsc.createProject('tsconfig.json');
+let Package = tsc.createProject({
+      declaration: true,
+      target: "ES5",
+      module: "node"
+    });
 
 //***************************************************************************
 //* CLEAN
@@ -97,18 +102,16 @@ gulp.task('test', sequence('build', 'test:build', 'test:coverage', 'test:mocha',
 //***************************************************************************
 //* PUBLISH
 //***************************************************************************
-gulp.task('build:lib', function(){
-    var tsResult = Project
-        .src()
-        .pipe(sourcemaps.init())
-        .pipe(Project());
+gulp.task('build:server', function(){
+    var tsResult = gulp
+        .src('src/*.ts')
+        .pipe(Package());
    
     return merge([
         tsResult.dts
-            .pipe(gulp.dest('./lib')),
+            .pipe(gulp.dest('./lib/server')),
         tsResult.js
-            .pipe(sourcemaps.write('./'))
-            .pipe(gulp.dest('./lib'))     
+            .pipe(gulp.dest('./lib/server'))     
     ]); 
 });
-gulp.task('publish', sequence('build:lib'));
+gulp.task('publish', sequence('build:server'));

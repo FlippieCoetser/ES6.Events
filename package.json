@@ -4,9 +4,17 @@
   "description": "TypeScript Event Management",
   "main": "lib/events.js",
   "types": "lib/events.d.ts",
+  "bin": {
+    "lint": "./tasks/lint.js",
+    "clean": "./tasks/clean.js"
+  },
   "scripts": {
-    "pretest": "tsc && tsc @test/.tests",
-    "test": "mocha"
+    "lint": "lint",
+    "build": "clean && lint && tsc -p typescript.build.json",
+    "pretest": "npm run build && tsc -p typescript.test.json",
+    "test": "nyc mocha",
+    "package": "tsc -p typescript.package.json",
+    "report": "nyc report --reporter=lcov"
   },
   "repository": {
     "type": "git",
@@ -45,6 +53,10 @@
     "istanbul": "^0.4.2",
     "merge2": "^1.0.1",
     "mocha": "^2.3.4",
+    "node-cmd": "^3.0.0",
+    "node-delete": "^0.1.2",
+    "nyc": "^11.2.1",
+    "rimraf": "^2.6.2",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "tslint": "^3.5.0",

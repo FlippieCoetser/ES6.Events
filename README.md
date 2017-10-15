@@ -25,3 +25,32 @@ Refer to https://nodejs.org/api/events.html for additional information
 ```
 npm install typescript.events
 ```
+
+### Development
+#### Prepare environment
+```
+git clone https://github.com/FlippieCoetser/Events
+cd Events
+npm install
+npm link
+```
+#### Lint code
+```
+lint
+```
+#### Build code
+```
+npm run build
+```
+#### Test code
+```
+npm test
+```
+#### Coverage report
+```
+npm run report
+```
+#### Package code
+```
+npm run package
+```

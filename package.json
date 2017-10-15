@@ -5,8 +5,8 @@
   "main": "lib/events.js",
   "types": "lib/events.d.ts",
   "bin": {
-    "lint": "./tasks/lint.js",
-    "clean": "./tasks/clean.js"
+    "clean": "./tasks/clean.js",
+    "lint": "./tasks/lint.js"
   },
   "scripts": {
     "lint": "lint",
@@ -41,17 +41,6 @@
     "@types/sinon-chai": "^2.7.29",
     "chai": "^3.5.0",
     "complexity-report": "^1.4.1",
-    "del": "^2.2.0",
-    "gulp": "^3.9.1",
-    "gulp-copy": "0.0.2",
-    "gulp-istanbul": "^0.10.3",
-    "gulp-mocha": "^2.2.0",
-    "gulp-sequence": "^0.4.5",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-tslint": "^4.3.3",
-    "gulp-typescript": "*",
-    "istanbul": "^0.4.2",
-    "merge2": "^1.0.1",
     "mocha": "^2.3.4",
     "node-cmd": "^3.0.0",
     "node-delete": "^0.1.2",
@@ -60,8 +49,7 @@
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "tslint": "^3.5.0",
-    "typescript": "^2.5.3",
-    "typings": "^0.7.7"
+    "typescript": "^2.5.3"
   },
   "dependencies": {}
 }

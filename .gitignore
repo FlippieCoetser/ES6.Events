@@ -6,3 +6,4 @@ src/*.d.ts
 complexity/
 coverage/
 lib/
+.nyc_ouput/

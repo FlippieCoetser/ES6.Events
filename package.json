@@ -1,13 +1,9 @@
 {
   "name": "typescript.events",
-  "version": "7.4.0",
+  "version": "7.5.0",
   "description": "TypeScript Event Management",
   "main": "lib/server/events.js",
   "types": "lib/server/events.d.ts",
-  "bin": {
-    "clean": "./tasks/clean.js",
-    "lint": "./tasks/lint.js"
-  },
   "scripts": {
     "lint": "lint",
     "postintall": "npm link",
@@ -16,6 +12,10 @@
     "test": "nyc mocha",
     "package": "tsc -p typescript.package.json",
     "report": "nyc report --reporter=lcov"
+  },
+  "bin": {
+    "clean": "./tasks/clean.js",
+    "lint": "./tasks/lint.js"
   },
   "repository": {
     "type": "git",

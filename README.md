@@ -2,6 +2,7 @@
 Implementation of **Node.Events** in Typescript for Client and Server
 
 ### Example
+#### Typescript
 ```typescript
 import {Event} from "typescript.events";
 
@@ -14,7 +15,21 @@ myEmitter.on('event', () => {
 
 myEmitter.emit('event');
 ```
-Refer to https://nodejs.org/api/events.html for additional information
+#### Javascript
+When performing in browser testing with [NPM](https://npm.runkit.com/typescript.events) copy, paste and run below example.
+```javascript
+var Event = require("typescript.events").Event;
+
+class MyEmitter extends Event {};
+
+let myEmitter = new MyEmitter();
+myEmitter.on('event', () => {
+   console.log('event occured') 
+});
+
+myEmitter.emit('event');
+```
+Refer to [Node Documentation](https://nodejs.org/api/events.html) for additional information
 
 ### IntelliSense Exeperience
 
@@ -36,7 +51,7 @@ npm link
 ```
 #### Lint code
 ```
-lint
+npm run lint
 ```
 #### Build code
 ```

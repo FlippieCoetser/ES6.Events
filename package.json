@@ -1,6 +1,6 @@
 {
   "name": "typescript.events",
-  "version": "7.8.0",
+  "version": "7.9.0",
   "description": "TypeScript Event Management",
   "main": "lib/server/events.js",
   "types": "lib/server/events.d.ts",

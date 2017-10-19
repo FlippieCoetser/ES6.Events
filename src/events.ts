@@ -21,11 +21,11 @@ export class Event {
         this._registerEvent(eventName, listener, true);
         return this;
     }
-    public emit(eventName: string, ...a): boolean {
+    public emit(eventName: string, ...args): boolean {
         let listeners = this._Events.Item(eventName);
         let listenerCount = this.listenerCount(eventName);
         if (listeners) {
-            listeners.map(listener => listener(...a));
+            listeners.map(listener => listener(...args));
         }
         return listenerCount === 0 ? false : true;
     }
@@ -78,9 +78,9 @@ export class Event {
         return listeners;
     }
     private _createOnceListener(listener: Listener, eventName: string): Listener {
-        let newListener = () => {
+        let newListener = (...args) => {
             this.removeListener(eventName, listener);
-            return listener();
+            return listener(...args);
         };
         return newListener;
     }

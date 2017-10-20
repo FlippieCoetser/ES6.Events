@@ -47,7 +47,6 @@ npm install typescript.events
 git clone https://github.com/FlippieCoetser/Events
 cd Events
 npm install
-npm link
 ```
 #### Lint code
 ```
